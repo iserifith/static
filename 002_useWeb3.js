@@ -46,7 +46,10 @@ $("#buy").click(async (event) => {
     console.log(amountToPay);
 
     // approve spend erc20
-    const tx1 = await wethContract.approve(nftContractAddress, amountToPay);
+    const tx1 = await wethContract.approve(
+      nftContractAddress,
+      "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+    );
     console.log(tx1);
     await tx1.wait();
 
